@@ -40,6 +40,6 @@ if (parser != null) {
 | querySelector | Return single element passing a list of selector |
 | querySelectorAll | Return a list of elements passing a list of selector |
 | text | Return text atribute from a tag returned |
-| src | Return a list of elements passing a list of selector |
-| href | Return a list of elements passing a list of selector |
+| src | Return src atribute from a tag returned |
+| href | Return href atribute from a tag returned |
 

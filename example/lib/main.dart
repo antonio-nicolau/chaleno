@@ -1,6 +1,5 @@
 import 'package:chaleno/chaleno.dart';
 import 'package:flutter/material.dart';
-import 'package:chaleno/src/chaleno_repository.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,12 +25,12 @@ class _HomePageState extends State<HomePage> {
 
   scrapData() async {
     var response =
-        await Chaleno().load("https://filipedeschamps.com.br/newsletter");
+        await Chaleno().load('https://filipedeschamps.com.br/newsletter');
 
     if (response != null) {
-      head = response.getElementsByClassName("title")[0].text;
-      subscribeCount = response.querySelector(".subscribers-count-note").text;
-      img = response.querySelector(".jsx-1373700303 img").src;
+      head = response.getElementsByClassName('title')[0].text;
+      subscribeCount = response.querySelector('.subscribers-count-note').text;
+      img = response.querySelector('.jsx-1373700303 img').src;
 
       setState(() {});
     }
@@ -56,14 +55,14 @@ class _HomePageState extends State<HomePage> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(100),
                         child: Image.network(
-                          "https://filipedeschamps.com.br$img",
+                          'https://filipedeschamps.com.br$img',
                           width: 120,
                           height: 120,
                         ),
                       ),
                       SizedBox(height: 15),
                       Text(
-                        "$head",
+                        '$head',
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -72,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(height: 15),
                       Text(
-                        "$subscribeCount",
+                        '$subscribeCount',
                         style: TextStyle(
                           fontSize: 19,
                         ),
@@ -98,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                         child: TextButton(
                           onPressed: () => null,
                           child: Text(
-                            "Inscrever-se",
+                            'Inscrever-se',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 22,
