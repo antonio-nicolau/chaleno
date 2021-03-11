@@ -1,0 +1,19 @@
+name: chaleno
+description: A package to webscraping data from websites.
+version: 0.0.1
+author: António Nicolau <antonio.tioypedro1234@gmail.com>
+homepage: https://github.com/antonio-nicolau/chaleno
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  http: ">=0.13.0 <1.0.0"
+  html: ">=0.15.0 <1.0.0"
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
