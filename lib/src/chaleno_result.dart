@@ -6,8 +6,8 @@ class Result {
   DocumentFragment? _dom;
 
   Result(result) {
-    this._result = result;
-    this._dom = parseFragment(result.outerHtml);
+    _result = result;
+    _dom = parseFragment(result.outerHtml);
   }
 
   String? get html => _result?.outerHtml;
@@ -20,37 +20,38 @@ class Result {
 
   String? get classe => _result?.className;
 
-  String? get src => _getAtribut("src");
+  String? get src => _getAtribut('src');
 
-  String? get href => _getAtribut("href");
+  String? get href => _getAtribut('href');
 
-  String? get alt => _getAtribut("alt");
+  String? get alt => _getAtribut('alt');
 
-  String? get width => _getAtribut("width");
+  String? get width => _getAtribut('width');
 
-  String? get height => _getAtribut("height");
+  String? get height => _getAtribut('height');
 
-  String? get title => _getAtribut("title");
+  String? get title => _getAtribut('title');
 
-  String? get action => _getAtribut("action");
+  String? get action => _getAtribut('action');
 
-  String? get hidden => _getAtribut("hidden");
+  String? get hidden => _getAtribut('hidden');
 
   //Return Element's atribut according [attr] param
   String? _getAtribut(String? attr) {
-    String? res = _result?.outerHtml != null ? _result?.outerHtml : null;
-    RegExp regex = RegExp("^.*$attr=\"(.*?)\"");
-    String? regexResult = regex.firstMatch(res.toString())?.group(1);
+    final res = _result?.outerHtml;
+    var regex = RegExp('^.*$attr=\"(.*?)\"');
+    final regexResult = regex.firstMatch(res.toString())?.group(1);
     return regexResult;
   }
 
   Result? querySelector(selector) {
-    Element? result = _dom?.querySelector(selector);
-    return Result(result);
+    final result = _dom?.querySelector(selector);
+    if (result != null) return Result(result);
+    return null;
   }
 
   List<Result>? querySelectorAll(selector) {
-    List<Element>? results = _dom?.querySelectorAll(selector);
+    final results = _dom?.querySelectorAll(selector);
     return _extractResults(results);
   }
 
@@ -59,7 +60,7 @@ class Result {
     List<Result>? results = <Result>[];
 
     data?.forEach((item) {
-      Result result = Result(item);
+      final result = Result(item);
       results.add(result);
     });
     return results;

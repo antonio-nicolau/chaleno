@@ -1,6 +1,6 @@
 name: chaleno
 description: A package to webscraping data from websites.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/antonio-nicolau/chaleno
 
 environment:

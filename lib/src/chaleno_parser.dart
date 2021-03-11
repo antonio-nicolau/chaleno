@@ -6,16 +6,14 @@ class Parser {
   Document? _dom;
 
   Parser(String? dom) {
-    this._dom = parse(dom);
+    _dom = parse(dom);
   }
 
   Result? get parent => Result(_dom?.parent);
 
-  get html => _dom?.outerHtml;
+  String? get html => _dom?.outerHtml;
 
-  get children => ([index]) {
-        return index != null ? _dom?.children[index] : _dom?.children;
-      };
+  List<Element>? get children => _dom?.children;
 
   Result getElementById(id) {
     return Result(_dom?.getElementById(id));
@@ -32,12 +30,12 @@ class Parser {
   }
 
   Result querySelector(selector) {
-    Element? result = _dom?.querySelector(selector);
+    final result = _dom?.querySelector(selector);
     return Result(result);
   }
 
   List<Result> querySelectorAll(selector) {
-    List<Element>? results = _dom?.querySelectorAll(selector);
+    final results = _dom?.querySelectorAll(selector);
     return _extractResults(results);
   }
 
@@ -46,7 +44,7 @@ class Parser {
     List<Result>? results = <Result>[];
 
     data?.forEach((item) {
-      Result result = Result(item);
+      final result = Result(item);
       results.add(result);
     });
     return results;
@@ -54,9 +52,9 @@ class Parser {
 
   //Return page tite
   String? title() {
-    String? document = _dom?.outerHtml;
-    RegExp regex = RegExp(r"<title>(.*?)<\/title>");
-    RegExpMatch? response = regex.firstMatch(document.toString());
+    var document = _dom?.outerHtml;
+    final regex = RegExp('<title>(.*?)<\/title>');
+    final response = regex.firstMatch(document.toString());
     return response != null ? response.group(1) : null;
   }
 }
