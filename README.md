@@ -10,10 +10,11 @@ Webscraping any data from website, this package give you this power from the eas
 var parser = await Chaleno().load('https://example.com');
 ```
 It return a Parser witch one we will use to get any data
+
 You can load HTML file from localhost
 ```Dart
 var parser = await Chaleno().load('https://localhost/index');
-OU
+
 var parser = await Chaleno().load('https://192.168.1.122/index');
 ```
 
