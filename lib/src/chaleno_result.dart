@@ -20,24 +20,24 @@ class Result {
 
   String? get classe => _result?.className;
 
-  String? get src => _getAtribut('src');
+  String? get src => attr('src');
 
-  String? get href => _getAtribut('href');
+  String? get href => attr('href');
 
-  String? get alt => _getAtribut('alt');
+  String? get alt => attr('alt');
 
-  String? get width => _getAtribut('width');
+  String? get width => attr('width');
 
-  String? get height => _getAtribut('height');
+  String? get height => attr('height');
 
-  String? get title => _getAtribut('title');
+  String? get title => attr('title');
 
-  String? get action => _getAtribut('action');
+  String? get action => attr('action');
 
-  String? get hidden => _getAtribut('hidden');
+  String? get hidden => attr('hidden');
 
   //Return Element's atribut according [attr] param
-  String? _getAtribut(String? attr) {
+  String? attr(String? attr) {
     final res = _result?.outerHtml;
     var regex = RegExp('^.*$attr=\"(.*?)\"');
     final regexResult = regex.firstMatch(res.toString())?.group(1);
