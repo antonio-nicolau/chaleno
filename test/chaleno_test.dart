@@ -10,7 +10,17 @@ void main() {
   });
 
   group('Test chaleno repository class', () {
-    test('Acess URL', () {
+    test('Get internet url', () {
+      expect(parser?.html, isNotEmpty);
+    });
+
+    test('Get LocalHost with LocalHost name', () async {
+      parser = await Chaleno().load('http://localhost/index');
+      expect(parser?.html, isNotEmpty);
+    });
+
+    test('Get LocalHost with IP', () async {
+      parser = await Chaleno().load('http://192.168.1.122/index');
       expect(parser?.html, isNotEmpty);
     });
   });
