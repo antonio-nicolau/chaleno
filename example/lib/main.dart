@@ -21,19 +21,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String? head, subscribeCount, img;
+  String? header, subscribeCount, img;
 
-  scrapData() async {
-    var response =
-        await Chaleno().load('https://filipedeschamps.com.br/newsletter');
+  void scrapData() async {
+    final url = 'https://filipedeschamps.com.br/newsletter';
+    var response = await Chaleno().load(url);
 
-    if (response != null) {
-      head = response.getElementsByClassName('title')[0].text;
-      subscribeCount = response.querySelector('.subscribers-count-note').text;
-      img = response.querySelector('.jsx-1373700303 img').src;
+    header = response?.getElementsByClassName('title')[0].text;
+    subscribeCount = response?.querySelector('.subscribers-count-note').text;
+    img = response?.querySelector('.jsx-1373700303 img').src;
 
-      setState(() {});
-    }
+    setState(() {});
   }
 
   @override
@@ -45,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.fromLTRB(15, 60, 15, 20),
-            child: head == null
+            child: header == null
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
@@ -62,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(height: 15),
                       Text(
-                        '$head',
+                        '$header',
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
