@@ -1,17 +1,17 @@
 # Chaleno
-A flutter package to webscraping data from websites
+A flutter package for webscraping data from websites.
 
-This package contains a set of high-level functions that make it easy to webscrap websites. It's multi-platform, and supports mobile, desktop, and the web.
+This package contains a set of high-level functions that make it easy to webscrap websites. It's multi-platform, supports mobile, desktop, and the web.
 
 # Usage
-Webscraping any data from website, this package give you this power from the easely way
-#### Instance Chaleno classe
+Scraping data from websites, this package gives you the power to scrape the web in an easy way.
+#### Instance Chaleno class
 ```Dart
 var parser = await Chaleno().load('https://example.com');
 ```
-It return a Parser witch one we will use to get any data
+It returns a Parser which we can use to start webscraping.
 
-You can load HTML file from localhost
+You can load HTML file from localhost.
 ```Dart
 var parser = await Chaleno().load('https://localhost/index');
 
@@ -19,7 +19,7 @@ var parser = await Chaleno().load('https://192.168.1.122/index');
 ```
 
 #### Very simple to use
-After intance Chaleno class, you can easily take any data using few code lines
+After instantiating Chaleno class, you can easily retrieve any data using few code lines
 ```Dart 
 Result result = parser.getElementById('id');
 print(result.text);
@@ -27,7 +27,7 @@ print(result.text);
 List<Result> results = parser.getElementsByClassName('className');
 results.map((item) => print(item.text))
 ```
-You can return a single Result or a list of results and go map them. You can find most popular methods and attributs in table bellow
+You can return a single result or a list of results and map them. You can find most popular methods and attributes in table below.
 
 ### Example
 ```Dart 
