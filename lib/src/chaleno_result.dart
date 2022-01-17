@@ -7,7 +7,9 @@ class Result {
 
   Result(result) {
     _result = result;
-    _dom = parseFragment(result.outerHtml);
+    if (result != null) {
+      _dom = parseFragment(result.outerHtml);
+    }
   }
 
   String? get html => _result?.outerHtml;
