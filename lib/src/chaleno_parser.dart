@@ -6,7 +6,9 @@ class Parser {
   Document? _dom;
 
   Parser(String? dom) {
-    _dom = parse(dom);
+    if (dom != null) {
+      _dom = parse(dom);
+    }
   }
 
   Result? get parent => Result(_dom?.parent);
