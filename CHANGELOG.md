@@ -8,3 +8,7 @@
 ## [0.0.5] - TODO: 
 * TODO: Remove Flutter dependence from package
 * TODO: Now can get custom attr
+## [0.0.6] - TODO: 
+* TODO: solved error The getter 'outerHtml' was called on null
+* TODO: added example support for windows
+* TODO: updated httpClient to close connection when done fetch the data

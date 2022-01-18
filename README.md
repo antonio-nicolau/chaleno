@@ -31,11 +31,11 @@ You can return a single result or a list of results and map them. You can find m
 
 ### Example
 ```Dart 
-var parser = await Chaleno().load('https://filipedeschamps.com.br/newsletter');
+final parser = await Chaleno().load('https://example.com');
 
-header = parser.getElementsByClassName('title')[0].text;
-subscribeCount = parser.querySelector('.subscribers-count-note').text;
-image = parser.querySelector('.jsx-1373700303 img').src;
+final title = parser?.getElementById('title').text;
+final contents = parser.querySelector('.content-card').text;
+final image = parser.getElementsByTagName('img').src;
 
 ```
 ## Importants Methods and propriets
