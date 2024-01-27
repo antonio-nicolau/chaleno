@@ -12,3 +12,5 @@
 * TODO: solved error The getter 'outerHtml' was called on null
 * TODO: added example support for windows
 * TODO: updated httpClient to close connection when done fetch the data
+## [0.0.7]
+* Upgraded sdk constraint to >=3.0.5 <4.0.0
