@@ -4,11 +4,11 @@ version: 0.0.7
 homepage: https://github.com/antonio-nicolau/chaleno
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
-  http: ">=0.13.0 <1.0.0"
-  html: ">=0.15.0 <1.0.0"
+  html: ^0.15.4
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:

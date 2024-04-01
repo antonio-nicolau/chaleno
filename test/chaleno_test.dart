@@ -26,7 +26,7 @@ void main() {
 
   group('Test to get any attr from element', () {
     test('Get ´data-scope-type´ attr value from ´js-site-search-form´ class element', () {
-      expect(parser?.getElementsByClassName('js-site-search-form')[0].attr('data-scope-type'), equals('User'));
+      expect(parser?.getElementsByClassName('vcard-fullname')[0].attr('itemprop'), equals('name'));
     });
   });
 }
